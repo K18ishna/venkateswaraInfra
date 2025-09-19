@@ -1385,7 +1385,7 @@
 </li>
               <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🎓 TOP EDUCATIONAL INSTITUTIONS NEARBY</li>
               <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 1 KM to Bachpan School</li>
-              <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 Close to 2 Sage Schools</li>
+              <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 Close to Sage Schools</li>
               <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 3 KM to Meridian International School</li>
             </ul>
           </div>
@@ -1777,21 +1777,16 @@
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
 
-    // Create data object
-    const data = {
-        name: name,
-        phone: phone,
-        email: email
-    };
+  const formData = new FormData();
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("email", email);
 
     // Send as JSON instead of FormData
-    fetch("https://script.google.com/macros/s/AKfycbx7H4rfD7fY9dwa1ovbPji0bKQcafoyiwRZvR19WIJ4aHt2hwZf1UHN53i_j7hkT9sQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwmGP7xuIjL3kEPTUYlVt3nDnG6G_COK0UirFp4EIm3bCu7ZK5he1ORj61AqbGNKN24/exec", {
         method: "POST",
         mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+        body: formData
     })
     .then(() => {
         alert("Form submitted successfully!");
@@ -1810,6 +1805,7 @@
         // alert("There was an error submitting the form.");
     });
 }
+
 
 // Start popup timer after page loads
 window.addEventListener('load', function() {
