@@ -5,221 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VENKATESWARA INFRA</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    /* Theme Colors */
-    :root {
-      --primary-dark: #0F1624;
-      --primary-medium: #1D2635;
-      --primary-light: #2A3647;
-      --accent-color: #FFD700;
-      --accent-hover: #FFF000;
-      --text-light: #FFFFFF;
-      --text-muted: #B4B4B4;
-      --bg-overlay: rgba(29, 38, 53, 0.95);
-      --bg-card: #1D2635;
-      --border-accent: rgba(255, 215, 0, 0.2);
-      --nav-active: #FFD700;
-      --text-gradient: linear-gradient(90deg, #FFD700, #FFF000);
-    }
-
+   <style>
      * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
     }
-    
-    header {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      display: block;
-      line-height: 0;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Fix for carousel bottom space */
-    .carousel {
-      font-size: 0;
-      line-height: 0;
-    }
-
-    .d-block {
-      margin-bottom: 0;
-      font-size: 0;
-      line-height: 0;
-    }
-
-    /* Header Carousel Styles */
-    #headerCarousel {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 0;
-      padding: 0;
-      display: block;
-      line-height: 0;
-    }
-
-    /* Section Styles */
-    section {
-      padding: 4rem 2rem;
-      margin: 2rem auto;
-      max-width: 1200px;
-      background: var(--bg-overlay);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-      backdrop-filter: blur(10px);
-      border: 1px solid var(--border-accent);
-    }
-
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      /* color: var(--accent-color); */
-      text-align: center;
-    }
-
-    #headerCarousel .carousel-inner {
-      width: 100%;
-      height: 100%;
-      line-height: 0;
-    }
-
-    #headerCarousel .carousel-item {
-      height: 100vh; /* Full height on desktop */
-      line-height: 0;
-    }
-
-    #headerCarousel .carousel-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      margin: 0;
-      line-height: 0;
-      vertical-align: bottom;
-    }
-
-    /* Fade transition effect */
-    .carousel-fade .carousel-item {
-      opacity: 0;
-      transition-duration: .6s;
-      transition-property: opacity;
-    }
-
-    .carousel-fade .carousel-item.active {
-      opacity: 1;
-    }
-
-    /* Navigation styling */
-    #headerCarousel .carousel-control-prev,
-    #headerCarousel .carousel-control-next {
-      width: 5%;
-      opacity: 0.8;
-      z-index: 10;
-    }
-
-    #headerCarousel .carousel-control-prev-icon,
-    #headerCarousel .carousel-control-next-icon {
-      width: 3rem;
-      height: 3rem;
-    }
-
-    /* Mobile responsive height */
-    @media (max-width: 768px) {
-      #headerCarousel .carousel-item {
-        height: 60vh;
-      }
-    }
-    /* Removed duplicate carousel styles as they are already defined above */
-
-    /* Contact Form Styles */
-    .contact-form {
-      background: var(--bg-overlay);
-      backdrop-filter: blur(10px);
-      padding: 2rem;
-      border-radius: 20px;
-      border: 1px solid var(--border-accent);
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      background: rgba(0, 0, 0, 0.3);
-      border: 1px solid var(--border-accent);
-      border-radius: 8px;
-      color: var(--text-light);
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: none;
-      border-color: var(--accent-color);
-      box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-    }
-
-    .contact-form button {
-      background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-      color: #000;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-    }
-
-    /* Footer Styles */
-    footer {
-      background: linear-gradient(135deg, #000000, var(--primary-dark));
-      color: var(--text-light);
-      text-align: center;
-      padding: 2rem;
-      margin-top: 4rem;
-      border-top: 1px solid var(--border-accent);
-    }
-
-    /* Hover Effects */
-    .btn {
-      background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
-      color: #000;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-    }
-
-    img {
-      transition: all 0.3s ease;
-    }
-
-    img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    }
 
     body {
-      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 50%, var(--primary-light) 100%);
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
       background-attachment: fixed;
-      color: var(--text-light);
+      color: #e8e8e8;
       line-height: 1.6;
     }
 
@@ -229,15 +26,40 @@
       overflow: hidden;
     }
 
-    /* Removed duplicate carousel styles */
+    .carousel {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      overflow: hidden;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel img {
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.2);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      transition: opacity 0.5s;
+    }
+    .carousel img.active {
+      display: block;
+      opacity: 1;
+      z-index: 2;
+    }
 
     /* Desktop Image - Show on desktop, hide on mobile */
     .carousel .desktop-image {
       display: block !important;
       opacity: 1 !important;
       z-index: 2;
-       width: 100% !important;
-        height: 100vh !important;
     }
 
     /* Mobile Image - Hide on desktop, show on mobile */
@@ -257,8 +79,6 @@
         display: block !important;
         opacity: 1 !important;
         z-index: 2;
-         width: 100% !important;
-        height: 100vh !important;
       }
     }
 
@@ -266,21 +86,20 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: var(--bg-overlay);
-      border: 1px solid var(--border-accent);
-      color: var(--accent-color);
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: #40E0D0;
       font-size: 2.5rem;
       padding: 0.5rem 1.2rem;
       border-radius: 50%;
       cursor: pointer;
       z-index: 10;
-      transition: all 0.3s ease;
+      transition: background 0.2s;
       user-select: none;
     }
     .carousel-btn:hover {
-      background: rgba(255, 215, 0, 0.2);
-      color: var(--text-light);
-      transform: translateY(-50%) scale(1.1);
+      background: rgba(255,215,0,0.2);
+      color: #fff;
     }
     .carousel-btn.left {
       left: 2vw;
@@ -350,7 +169,7 @@
     nav .logo .logo-text span {
       font-size: 1.2rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #40E0D0, #48D1CC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -387,7 +206,7 @@
     }
 
     nav a:hover {
-    color: #ffd700;
+      color: #40E0D0;
       transform: translateY(-2px);
     }
 
@@ -398,7 +217,7 @@
       height: 2px;
       bottom: -5px;
       left: 0;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #40E0D0, #48D1CC);
       transition: width 0.3s ease;
     }
 
@@ -426,7 +245,7 @@
       display: block;
       width: 25px;
       height: 3px;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #40E0D0, #48D1CC);
       margin: 5px 0;
       transition: 0.3s;
       border-radius: 2px;
@@ -542,7 +361,23 @@
       }
     }
 
-      /* Removed duplicate navigation styles as they are covered in the media queries above */
+      .nav-links {
+        display: flex !important; /* Show navigation on mobile */
+        flex-wrap: nowrap; /* Prevent wrapping */
+        gap: 8px; /* Add gap instead of margin */
+      }
+
+      .nav-links.active {
+        display: flex !important; /* Show navigation when active */
+      }
+
+      /* Make mobile nav items smaller */
+      nav a {
+        margin-left: 0; /* Remove left margin */
+        font-size: 0.7rem; /* Even smaller font */
+        padding: 4px 8px; /* Add padding for touch targets */
+        white-space: nowrap; /* Prevent text wrapping */
+      }
 
       /* Bottom Navigation for Mobile */
       .bottom-nav {
@@ -573,7 +408,7 @@
       }
 
       .bottom-nav a:hover, .bottom-nav a:active {
-        background: linear-gradient(135deg, #ffd700, #ffed4e);
+        background: linear-gradient(135deg, #40E0D0, #48D1CC);
         color: #000;
         transform: translateY(-2px);
       }
@@ -603,7 +438,7 @@
     section h2 {
       font-size: clamp(2rem, 5vw, 3rem);
       margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #40E0D0, #48D1CC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -710,7 +545,7 @@
     }
 
     .feature-item h4 {
-      color: #ffd700;
+      color: #40E0D0;
       font-size: 1rem;
       margin-bottom: 0.5rem;
       font-weight: 600;
@@ -1141,7 +976,7 @@
     }
 
     .whatsapp-btn:hover {
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #128c7e, #075e54);
       transform: translateY(-2px);
     }
 
@@ -1203,7 +1038,7 @@
     }
 
     .popup-form h3 {
-      color: #ffd700;
+      color: #40E0D0;
       margin-bottom: 15px;
       font-size: 1.2rem;
       text-align: center;
@@ -1216,8 +1051,7 @@
       right: 15px;
       background: none;
       border: none;
-           color: #ffd700;
-
+      color: #40E0D0;
       font-size: 1.5rem;
       cursor: pointer;
       padding: 0;
@@ -1230,7 +1064,7 @@
     }
 
     .popup-form .close-btn:hover {
-      color: #ffd700;
+      color: #48D1CC;
     }
 
     .popup-form input {
@@ -1247,7 +1081,7 @@
 
     .popup-form input:focus {
       outline: none;
-      border-color: #ffd700;
+      border-color: #40E0D0;
       box-shadow: 0 0 15px rgba(64, 224, 208, 0.2);
       background: rgba(26, 26, 46, 0.8);
     }
@@ -1259,7 +1093,7 @@
     .popup-form button {
       width: 100%;
       padding: 12px;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #40E0D0, #48D1CC);
       color: #1a1a2e;
       border: none;
       border-radius: 8px;
@@ -1272,7 +1106,7 @@
 
     .popup-form button:hover {
       transform: translateY(-2px);
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #48D1CC, #40E0D0);
       box-shadow: 0 5px 15px rgba(64, 224, 208, 0.3);
     }
 
@@ -1336,7 +1170,7 @@
     .contact-tagline .highlight {
       font-size: 1.8rem;
       font-weight: 600;
-      background: linear-gradient(135deg, #ffd700, #ffed4e);
+      background: linear-gradient(135deg, #40E0D0, #48D1CC);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -1361,11 +1195,10 @@
 
     .value-pill {
       background: rgba(64, 224, 208, 0.1);
-            color: #ffd700;
-
+      color: #40E0D0;
       padding: 0.5rem 1.5rem;
       border-radius: 25px;
-      border: 1px solid #ffd700;
+      border: 1px solid rgba(64, 224, 208, 0.3);
       font-size: 1rem;
       font-weight: 500;
     }
@@ -1387,22 +1220,19 @@
     }
 
     .contact-cta i {
-           color: #ffd700;
-
+      color: #40E0D0;
       font-size: 1.2rem;
     }
 
     .contact-cta a {
-           color: #ffd700;
-
+      color: #40E0D0;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
     }
 
     .contact-cta a:hover {
-         color: #ffd700;
-
+      color: #48D1CC;
       transform: translateY(-1px);
     }
 
@@ -1457,37 +1287,14 @@
     </div>
   </nav>
 
- <header>
+
+  <header>
     <div class="carousel">
-      <img src="Images/header_web.jpeg" alt="My Home Bhooja View 1" class="desktop-image">
-      <img src="Images/header_mobile.jpeg" alt="My Home Bhooja Mobile View" class="mobile-image">
-      <!-- <img src="Images/868595 lingala mallesh_page-0003.jpg" alt="My Home Bhooja View 3"> -->
+      <img src="Images/bhoomi_enclave_main.JPG" alt="Apartment View" class="desktop-image">
+      <img src="Images/bhoomi_enclave_main.JPG" alt="Apartment Mobile View" class="mobile-image">
     </div>
     <h1>Luxury High-Rise Living</h1>
   </header>
-  <!-- <header>
-   
-  <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-          <div class="carousel-item active">
-              <img src="Images/header_mobile.jpeg" class="d-block w-100" alt="Slide 1">
-          </div>
-          <div class="carousel-item">
-              <img src="Images/header-2.jpeg" class="d-block w-100" alt="Slide 2">
-          </div>
-      </div>
-      
-
-      <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-      </button>
-  </div>
-  </header> -->
 
   <section id="overview">
     <h2>PROJECT HIGHLIGHTS</h2>
@@ -1535,7 +1342,7 @@
   </section>
 
   <section id="location">
-    <h2 style="text-align: center; color: #ffd700; margin-bottom: 2rem; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Prime Location</h2>
+    <h2 style="text-align: center; color: #40E0D0; margin-bottom: 2rem; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Prime Location</h2>
     
     <!-- Image at the top -->
     <div class="location-image-top">
@@ -1546,7 +1353,7 @@
     <div class="location-highlights-grid">
         <div class="location-highlight-column">
           <div style="margin-bottom: 2rem;">
-            <h4 style="color: #ffd700; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <h4 style="color: #40E0D0; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="margin-right: 8px;">🚗</span> Effortless Commute
             </h4>
             <ul style="list-style: none; padding: 0; margin: 0;">
@@ -1558,19 +1365,19 @@
           </div>
 
           <div style="margin-bottom: 2rem;">
-            <h4 style="color: #ffd700; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <h4 style="color: #40E0D0; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="margin-right: 8px;">🏢</span> Close to Key Shopping & Commercial Hubs
             </h4>
             <ul style="list-style: none; padding: 0; margin: 0;">
               <li style="color: #e8e8e8; margin-bottom: 0.5rem;">• 🛍 Close to Shopping Malls & Daily Needs</li>
-              <li style="color: #e8e8e8; margin-bottom: 0.5rem;">• Close to D-Mart</li>
+              <li style="color: #e8e8e8; margin-bottom: 0.5rem;">• 8 Min to D-Mart</li>
             </ul>
           </div>
         </div>
 
         <div class="location-highlight-column">
           <div style="margin-bottom: 2rem;">
-            <h4 style="color: #ffd700; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <h4 style="color: #40E0D0; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="margin-right: 8px;">🎓</span> Surrounded by Reputed Institutions
             </h4>
             <ul style="list-style: none; padding: 0; margin: 0;">
@@ -1578,13 +1385,13 @@
 </li>
               <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🎓 TOP EDUCATIONAL INSTITUTIONS NEARBY</li>
               <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 1 KM to Bachpan School</li>
-              <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 Close to 2 Sage Schools</li>
+              <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 Close to Sage Schools</li>
               <li style="color: #e0e0e0; margin-bottom: 0.5rem;">• 🏫 3 KM to Meridian International School</li>
             </ul>
           </div>
 
           <div style="margin-bottom: 1rem;">
-            <h4 style="color: #ffd700; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
+            <h4 style="color: #40E0D0; font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center;">
               <span style="margin-right: 8px;">🚉</span> Other Accessibility & Hospitals
             </h4>
             <ul style="list-style: none; padding: 0; margin: 0;">
@@ -1601,16 +1408,16 @@
   </section>
 
   <section id="features">
-    <h2 style="text-align: center; color: #ffd700; margin-bottom: 3rem; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">SPECIFICATIONS</h2>
+    <h2 style="text-align: center; color: #40E0D0; margin-bottom: 3rem; font-size: 2.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">SPECIFICATIONS</h2>
     
     <div class="features-timeline" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
       <!-- Structure Section -->
       <div class="feature-item" style="display: flex; margin-bottom: 4rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards;">
-        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #ffd700, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
+        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #40E0D0, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
           <span style="font-size: 2rem;">🏗️</span>
         </div>
         <div class="feature-content" style="flex: 1; margin-left: 2rem; background: rgba(26,26,46,0.9); padding: 2rem; border-radius: 15px; position: relative;">
-          <h3 style="color: #ffd700; margin-bottom: 1rem;">Structure Excellence</h3>
+          <h3 style="color: #40E0D0; margin-bottom: 1rem;">Structure Excellence</h3>
           <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Earthquake-resistant RCC frame (Zone-3)</li>
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Premium 9"/6" exterior walls</li>
@@ -1621,11 +1428,11 @@
 
       <!-- Interior Section -->
       <div class="feature-item" style="display: flex; margin-bottom: 4rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards 0.2s;">
-        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #ffd700, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
+        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #40E0D0, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
           <span style="font-size: 2rem;">🎨</span>
         </div>
         <div class="feature-content" style="flex: 1; margin-left: 2rem; background: rgba(26,26,46,0.9); padding: 2rem; border-radius: 15px;">
-          <h3 style="color: #ffd700; margin-bottom: 1rem;">Premium Finishes</h3>
+          <h3 style="color: #40E0D0; margin-bottom: 1rem;">Premium Finishes</h3>
           <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Designer OBD paint finishes</li>
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Weather-proof exterior coating</li>
@@ -1636,11 +1443,11 @@
 
       <!-- Doors & Windows -->
       <div class="feature-item" style="display: flex; margin-bottom: 4rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards 0.4s;">
-        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #ffd700, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
+        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #40E0D0, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
           <span style="font-size: 2rem;">🚪</span>
         </div>
         <div class="feature-content" style="flex: 1; margin-left: 2rem; background: rgba(26,26,46,0.9); padding: 2rem; border-radius: 15px;">
-          <h3 style="color: #ffd700; margin-bottom: 1rem;">Superior Woodwork</h3>
+          <h3 style="color: #40E0D0; margin-bottom: 1rem;">Superior Woodwork</h3>
           <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Teakwood main door with safety features</li>
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Waterproof flush doors</li>
@@ -1651,11 +1458,11 @@
 
       <!-- Kitchen & Electrical -->
       <div class="feature-item" style="display: flex; margin-bottom: 4rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards 0.6s;">
-        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #ffd700, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
+        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #40E0D0, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
           <span style="font-size: 2rem;">⚡</span>
         </div>
         <div class="feature-content" style="flex: 1; margin-left: 2rem; background: rgba(26,26,46,0.9); padding: 2rem; border-radius: 15px;">
-          <h3 style="color: #ffd700; margin-bottom: 1rem;">Modern Amenities</h3>
+          <h3 style="color: #40E0D0; margin-bottom: 1rem;">Modern Amenities</h3>
           <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Granite kitchen platform</li>
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• FRLS electrical wiring</li>
@@ -1666,11 +1473,11 @@
 
       <!-- Plumbing -->
       <div class="feature-item" style="display: flex; margin-bottom: 4rem; opacity: 0; transform: translateY(20px); animation: fadeInUp 0.6s ease forwards 0.8s;">
-        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #ffd700, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
+        <div class="feature-icon" style="flex: 0 0 80px; height: 80px; background: linear-gradient(135deg, #40E0D0, #48D1CC); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);">
           <span style="font-size: 2rem;">🚿</span>
         </div>
         <div class="feature-content" style="flex: 1; margin-left: 2rem; background: rgba(26,26,46,0.9); padding: 2rem; border-radius: 15px;">
-          <h3 style="color: #ffd700; margin-bottom: 1rem;">Premium Utilities</h3>
+          <h3 style="color: #40E0D0; margin-bottom: 1rem;">Premium Utilities</h3>
           <ul style="list-style: none; padding: 0; margin: 0;">
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Hindware/Neyser sanitary ware</li>
             <li style="color: #e8e8e8; margin-bottom: 0.5rem; font-size: 0.9rem;">• Quality CP fittings</li>
@@ -1754,7 +1561,7 @@
         <div class="contact-cta">
           <p>
             <i class="fas fa-phone"></i>
-            <a href="tel:+918309308226">+91 83093 08226</a>
+            <a href="tel:+919701553231">+91 970 155 3231</a>
           </p>
           <p>
             <i class="fas fa-map-marker-alt"></i>
@@ -1771,12 +1578,12 @@
 
   <!-- Sticky Contact Footer -->
   <div class="sticky-footer">
-    <a href="https://wa.me/918309308226?text=Hi, I'm interested in SRI VENKATESWARA INFR project. Please share more details." class="contact-button whatsapp-btn" target="_blank">
+    <a href="https://wa.me/919701553231?text=Hi, I'm interested in SPANESTA project. Please share more details." class="contact-button whatsapp-btn" target="_blank">
      <i class="fab fa-whatsapp"></i>
       WhatsApp
     </a>
       
-    <a href="tel:+918309308226" class="contact-button phone-btn">
+    <a href="tel:+919701553231" class="contact-button phone-btn">
       <span class="contact-icon">📞</span>
       Call Now
     </a>
@@ -1970,21 +1777,16 @@
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
 
-    // Create data object
-    const data = {
-        name: name,
-        phone: phone,
-        email: email
-    };
+  const formData = new FormData();
+    formData.append("name", name);
+    formData.append("phone", phone);
+    formData.append("email", email);
 
     // Send as JSON instead of FormData
-    fetch("https://script.google.com/macros/s/AKfycbx7H4rfD7fY9dwa1ovbPji0bKQcafoyiwRZvR19WIJ4aHt2hwZf1UHN53i_j7hkT9sQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwmGP7xuIjL3kEPTUYlVt3nDnG6G_COK0UirFp4EIm3bCu7ZK5he1ORj61AqbGNKN24/exec", {
         method: "POST",
         mode: 'no-cors',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
+        body: formData
     })
     .then(() => {
         alert("Form submitted successfully!");
@@ -2003,6 +1805,7 @@
         // alert("There was an error submitting the form.");
     });
 }
+
 
 // Start popup timer after page loads
 window.addEventListener('load', function() {
@@ -2108,16 +1911,8 @@ window.addEventListener('load', function() {
       restartFeaturesAutoPlayAfterDelay(); // Restart auto-play after delay
     }
 
-    // Initialize Bootstrap carousel
+    // Initialize features carousel when page loads
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize the header carousel
-      new bootstrap.Carousel(document.querySelector('#headerCarousel'), {
-        interval: 4000, // Change slides every 4 seconds
-        ride: 'carousel',
-        wrap: true
-      });
-      
-      // Initialize features carousel
       showFeaturesSlide(0);
       
       // Start auto-play after a short delay
@@ -2145,19 +1940,5 @@ window.addEventListener('load', function() {
     });
   </script>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Initialize the carousel with custom interval
-    document.addEventListener('DOMContentLoaded', function() {
-      new bootstrap.Carousel(document.querySelector('#headerCarousel'), {
-        interval: 4000 // Change slides every 4 seconds
-      });
-    });
-  </script>
-
 </body>
 </html>
-
-
-
